@@ -1,0 +1,15 @@
+<!--en placant l'attribut entre [] on lui indique que son état dépend de la variable placée entre "" -->
+
+<input type="text" [disabled]="!isNotAllowedToWrite" (keyup.enter)="changeUsername(usernameInput)" #usernameInput/>
+
+<p  [style.backgroundColor]="isPremium ? 'lavender':'none'">{{userName}}</p>
+
+<p [ngClass]="{premium:isPremium,
+pigeon:isPremium}" [ngStyle]="{border:isPremium ? '1px solid purple':'none',fontSize:isPremium?'32px':'1em'}">
+    Respectez les loutres svp.
+    Le reste c'est pas grave.
+</p>
+
+<p>Deuxième exemple</p>
+
+<input type="text" [disabled]="!isNotAllowedToWrite" (keyup.enter)="changeUsername(usernameInput)" [(ngModel)]="userName"/>
